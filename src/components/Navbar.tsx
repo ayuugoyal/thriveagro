@@ -42,7 +42,6 @@ const Navbar = () => {
                   Home
                 </div>
               </Link>
-
               <Link href={"/inventary"}>
                 <div className="flex gap-2 hover:bg-[#ffbc6b] hover:text-black p-3 rounded-md cursor-pointer">
                   <ListTodo />
@@ -55,12 +54,6 @@ const Navbar = () => {
                   Report an issue
                 </div>
               </Link>
-              <Link href={"/orders"}>
-                <div className="flex gap-2 hover:bg-[#ffbc6b] hover:text-black p-3 rounded-md cursor-pointer">
-                  <NotebookTabs />
-                  My orders
-                </div>
-              </Link>
             </div>
           ) : (
             <div className="space-y-2">
@@ -68,6 +61,18 @@ const Navbar = () => {
                 <div className="flex gap-2 hover:bg-[#ffbc6b] hover:text-black p-3 rounded-md cursor-pointer">
                   <Home />
                   Home
+                </div>
+              </Link>
+              <Link href={"/view-products"}>
+                <div className="flex gap-2 hover:bg-[#ffbc6b] hover:text-black p-3 rounded-md cursor-pointer">
+                  <NotebookTabs />
+                  All products
+                </div>
+              </Link>
+              <Link href={"/orders"}>
+                <div className="flex gap-2 hover:bg-[#ffbc6b] hover:text-black p-3 rounded-md cursor-pointer">
+                  <NotebookTabs />
+                  My orders
                 </div>
               </Link>
             </div>

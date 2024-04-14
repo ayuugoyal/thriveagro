@@ -51,7 +51,7 @@ const Page = () => {
       console.log(res);
 
       if (res.user_type === "buyer") {
-        window.location.href = "/dashboard/buyer";
+        window.location.href = "/dashboard";
       } else if (res.user_type === "seller") {
         window.location.href = "/dashboard";
       }
