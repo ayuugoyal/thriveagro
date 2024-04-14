@@ -66,6 +66,7 @@ export default function ProductDetails({
             <Button
               disabled={buyerOrder.includes(details.id)}
               onClick={handleSubmit}
+              className="w-full"
             >
               {buyerOrder.includes(details.id)
                 ? "Already bought"

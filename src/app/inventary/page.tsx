@@ -135,63 +135,75 @@ const Page = () => {
       <div className="flex flex-col items-center w-full">
         <div className="font-bold text-2xl mt-5">My Inventory</div>
         <p>An overview of yours crops</p>
-        <Tabs
-          defaultValue="seeds"
-          className="w-full justify-center flex flex-col items-center mt-5 gap-5"
-        >
-          <TabsList>
-            <TabsTrigger value="seeds" className="w-fit">
-              Seeds
-            </TabsTrigger>
-            <TabsTrigger value="in-growth" className="w-fit">
-              In Growth
-            </TabsTrigger>
-            <TabsTrigger value="ready" className="w-fit">
-              Ready
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent value="seeds">
-            <div className="flex flex-wrap gap-5">
-              {userProducts
-                .filter((product: Inventory) => product.status === "seeds")
-                .map((product: Inventory, index: number) => {
-                  return (
-                    <ProductDetails
-                      user={userDetails}
-                      details={product}
-                      key={index}
-                    />
-                  );
-                })}
-            </div>
-          </TabsContent>
-          <TabsContent value="in-growth">
-            {userProducts
-              .filter((product: Inventory) => product.status === "in-growth")
-              .map((product: Inventory, index: number) => {
-                return (
-                  <ProductDetails
-                    user={userDetails}
-                    details={product}
-                    key={index}
-                  />
-                );
-              })}
-          </TabsContent>
-          <TabsContent value="ready">
-            {userProducts
-              .filter((product: Inventory) => product.status === "Ready")
-              .map((product: Inventory, index: number) => {
-                return (
-                  <ProductDetails
-                    user={userDetails}
-                    details={product}
-                    key={index}
-                  />
-                );
-              })}
-          </TabsContent>
-        </Tabs>
+        {userProducts.length === 0 ? (
+          <div className="flex justify-center items-center min-h-full">
+            <h1 className="text-2xl">No products in your inventory Add now</h1>
+          </div>
+        ) : (
+          <Tabs
+            defaultValue="seeds"
+            className="w-full justify-center flex flex-col items-center mt-5 gap-5"
+          >
+            <TabsList>
+              <TabsTrigger value="seeds" className="w-fit">
+                Seeds
+              </TabsTrigger>
+              <TabsTrigger value="in-growth" className="w-fit">
+                In Growth
+              </TabsTrigger>
+              <TabsTrigger value="ready" className="w-fit">
+                Ready
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="seeds">
+              <div className="flex flex-wrap gap-5">
+                {userProducts
+                  .filter((product: Inventory) => product.status === "seeds")
+                  .map((product: Inventory, index: number) => {
+                    return (
+                      <ProductDetails
+                        user={userDetails}
+                        details={product}
+                        key={index}
+                      />
+                    );
+                  })}
+              </div>
+            </TabsContent>
+            <TabsContent value="in-growth">
+              <div className="flex flex-wrap gap-5">
+                {userProducts
+                  .filter(
+                    (product: Inventory) => product.status === "in-growth"
+                  )
+                  .map((product: Inventory, index: number) => {
+                    return (
+                      <ProductDetails
+                        user={userDetails}
+                        details={product}
+                        key={index}
+                      />
+                    );
+                  })}
+              </div>
+            </TabsContent>
+            <TabsContent value="ready">
+              <div className="flex flex-wrap gap-5">
+                {userProducts
+                  .filter((product: Inventory) => product.status === "Ready")
+                  .map((product: Inventory, index: number) => {
+                    return (
+                      <ProductDetails
+                        user={userDetails}
+                        details={product}
+                        key={index}
+                      />
+                    );
+                  })}
+              </div>
+            </TabsContent>
+          </Tabs>
+        )}
         <AlertDialog>
           <AlertDialogTrigger asChild>
             <div className="fixed bottom-10 right-10 flex justify-center mt-5">
