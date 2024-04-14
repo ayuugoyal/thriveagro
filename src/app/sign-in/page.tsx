@@ -38,7 +38,7 @@ const Page = () => {
         if (res.user_type === "buyer") {
           window.location.href = "/dashboard/buyer";
         } else if (res.user_type === "seller") {
-          window.location.href = "/dashboard/seller";
+          window.location.href = "/dashboard";
         }
       }
     } catch (e) {
