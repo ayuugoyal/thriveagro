@@ -54,10 +54,7 @@ To set up the project locally, follow these steps:
 
 6. Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the app.
 
-7. Deployement Link:
-   ```bash
-   https://thriveagro-eta.vercel.app/
-   ```
+7. Deployement Link: [https://thriveagro-eta.vercel.app/](https://thriveagro-eta.vercel.app/).
 
 ## Contributing
 
