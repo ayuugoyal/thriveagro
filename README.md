@@ -1,3 +1,5 @@
+![THRIVE AGRO](public/logo.png)
+
 # THRIVE AGRO
 
 ## Project Description
