@@ -47,9 +47,6 @@ export const orders = pgTable("orders", {
   buyer_id: uuid("buyer_id")
     .references(() => users.id)
     .notNull(),
-  seller_id: uuid("seller_id")
-    .references(() => users.id)
-    .notNull(),
 });
 
 export type Order = typeof orders.$inferSelect;

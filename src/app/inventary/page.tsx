@@ -40,7 +40,7 @@ import {
   FormControl,
 } from "@/components/ui/form";
 import ProductDetails from "@/components/ProductDetails";
-import { Inventory } from "@/db/schema";
+import { Inventory, User } from "@/db/schema";
 import { get_all_products_in_inventry } from "@/actions/inventry";
 import { getUser } from "@/actions/user";
 import { redirect } from "next/navigation";
@@ -74,14 +74,16 @@ const formSchema = z.object({
 const Page = () => {
   const [userProducts, setUserProducts] = useState([] as Inventory[]);
   const [user_id, setUser_id] = useState("");
+  const [userDetails, setUserDetails] = useState<User>({} as User);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const user = await getUser();
+      const user: User = (await getUser()) as User;
       if (!user) {
         redirect("/sign-in");
       }
       setUser_id(user.id);
+      setUserDetails(user);
       const products = await get_all_products_in_inventry(user.id);
       console.log("userProducts", products);
       setUserProducts(products);
@@ -153,7 +155,13 @@ const Page = () => {
               {userProducts
                 .filter((product: Inventory) => product.status === "seeds")
                 .map((product: Inventory, index: number) => {
-                  return <ProductDetails details={product} key={index} />;
+                  return (
+                    <ProductDetails
+                      user={userDetails}
+                      details={product}
+                      key={index}
+                    />
+                  );
                 })}
             </div>
           </TabsContent>
@@ -161,14 +169,26 @@ const Page = () => {
             {userProducts
               .filter((product: Inventory) => product.status === "in-growth")
               .map((product: Inventory, index: number) => {
-                return <ProductDetails details={product} key={index} />;
+                return (
+                  <ProductDetails
+                    user={userDetails}
+                    details={product}
+                    key={index}
+                  />
+                );
               })}
           </TabsContent>
           <TabsContent value="ready">
             {userProducts
               .filter((product: Inventory) => product.status === "Ready")
               .map((product: Inventory, index: number) => {
-                return <ProductDetails details={product} key={index} />;
+                return (
+                  <ProductDetails
+                    user={userDetails}
+                    details={product}
+                    key={index}
+                  />
+                );
               })}
           </TabsContent>
         </Tabs>

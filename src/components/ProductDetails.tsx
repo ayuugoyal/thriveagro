@@ -1,9 +1,39 @@
+"use client";
+import { add_product_to_sellers_account } from "@/actions/order";
 import { Button } from "@/components/ui/button";
 import { Inventory, User } from "@/db/schema";
-import Link from "next/link";
-import { redirect } from "next/navigation";
+import { toast } from "sonner";
+import { useEffect, useState } from "react";
+import { get_all_buyer_orders } from "@/actions/order";
 
-export default function ProductDetails({ details }: { details: Inventory }) {
+export default function ProductDetails({
+  details,
+  user,
+}: {
+  details: Inventory;
+  user: User;
+}) {
+  const [buyerOrder, setBuyerOrder] = useState([] as String[]);
+  const handleSubmit = async () => {
+    try {
+      const response = await add_product_to_sellers_account(details.id);
+      console.log(response);
+      toast.success("Product added to your account");
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+      toast.error("Error adding product to your account");
+    }
+  };
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const userOrders = (await get_all_buyer_orders()) || [];
+      console.log(userOrders);
+      setBuyerOrder(userOrders.map((order) => order.inventory.id));
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <div className="flex w-72 flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mx-auto">
       <div className="px-4 py-5 sm:p-6">
@@ -32,6 +62,16 @@ export default function ProductDetails({ details }: { details: Inventory }) {
               </span>
             </dd>
           </div>
+          {user.user_type === "buyer" && (
+            <Button
+              disabled={buyerOrder.includes(details.id)}
+              onClick={handleSubmit}
+            >
+              {buyerOrder.includes(details.id)
+                ? "Already bought"
+                : "Buy this product"}
+            </Button>
+          )}
         </dl>
       </div>
     </div>

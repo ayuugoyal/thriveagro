@@ -45,7 +45,7 @@ const Navbar = () => {
               <Link href={"/inventary"}>
                 <div className="flex gap-2 hover:bg-[#ffbc6b] hover:text-black p-3 rounded-md cursor-pointer">
                   <ListTodo />
-                  My inventary
+                  My inventory
                 </div>
               </Link>
               <Link href={"/seva-sangh"}>
