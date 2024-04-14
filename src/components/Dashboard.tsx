@@ -14,8 +14,8 @@ const Dashboard = () => {
     <div className="bg-white">
       <div>
         <section className="py-16">
-          <div className="container mx-auto md:px-0">
-            <h1 className="font-bold text-6pxl pb-10 text-center">
+          <div className="">
+            <h1 className="font-bold text-3xl pb-10 text-center">
               WELCOME TO THRIVE AGRO
             </h1>
             <Swiper
@@ -27,40 +27,28 @@ const Dashboard = () => {
               scrollbar={{ draggable: true }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
+              className="w-[1000px]"
             >
               <SwiperSlide>
-                <div className="grid md:grid-cols-2 gap-0">
-                  <div className="image">
-                    <Link legacyBehavior href={"/home"}>
-                      <a>
-                        <Image
-                          src={"/images/yojana-1.jpg"}
-                          width={600}
-                          height={400}
-                          alt="yojana 1"
-                        />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="yojana-desc">
-                    <Link
-                      href={"/about"}
-                      className="text-orange-600 hover:text-orange-800"
-                    >
+                <div className="grid items-center place-content-center md:grid-cols-2 gap-5">
+                  <Image
+                    src={"/images/yojana-1.jpg"}
+                    width={600}
+                    height={400}
+                    alt="yojana 1"
+                    className="rounded-md"
+                  />
+                  <div>
+                    <div className="text-orange-600 hover:text-orange-800">
                       Yojana1
-                    </Link>
-                    <Link
-                      href={"/home"}
-                      className="text-gray-600 hover:text-gray-800"
-                    >
-                      launched on 3rd feb
-                    </Link>
-                    <div className="title">
-                      <h2 className="text-3xl md:text-6xl text-blue font-bold hover:text-gray-500">
-                        Pradhan Mantri Fasal Bima Yojana (PMFBY):
-                      </h2>
                     </div>
-                    <p className="text-lg text-gray-600 md:text-xl">
+                    <div className="text-gray-600 hover:text-gray-800">
+                      launched on 3rd feb
+                    </div>
+                    <h2 className="text-xl sm:text-3xl text-blue font-bold hover:text-gray-500">
+                      Pradhan Mantri Fasal Bima Yojana (PMFBY):
+                    </h2>
+                    <p className="text-lg text-gray-600">
                       The Pradhan Mantri Fasal Bima Yojana (PMFBY) is a crop
                       insurance scheme introduced by the Government of India to
                       provide financial support to farmers in case of crop
@@ -74,38 +62,25 @@ const Dashboard = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className="image">
-                      <Link legacyBehavior href={"/home"}>
-                        <a>
-                          <Image
-                            src={"/images/yojana-2.jpg"}
-                            width={600}
-                            height={400}
-                            alt="yojana 1"
-                          />
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="yojana-desc">
-                      <Link
-                        href={"/about"}
-                        className="text-orange-600 hover:text-orange-800"
-                      >
+                  <div className="grid items-center md:grid-cols-2 gap-5">
+                    <Image
+                      src={"/images/yojana-2.jpg"}
+                      width={600}
+                      height={400}
+                      alt="yojana 2"
+                      className="rounded-md"
+                    />
+                    <div>
+                      <div className="text-orange-600 hover:text-orange-800">
                         Yojana1
-                      </Link>
-                      <Link
-                        href={"/home"}
-                        className="text-gray-600 hover:text-gray-800"
-                      >
-                        launched on 3rd feb
-                      </Link>
-                      <div className="title">
-                        <h2 className="text-3xl md:text-5xl text-black font-bold hover:text-gray-500">
-                          Pradhan Mantri Kisan Samman Nidhi (PM-Kisan)
-                        </h2>
                       </div>
-                      <p className="text-lg text-gray-600 md:text-xl">
+                      <div className="text-gray-600 hover:text-gray-800">
+                        launched on 3rd feb
+                      </div>
+                      <h2 className="text-xl sm:text-3xl text-blue font-bold hover:text-gray-500">
+                        Pradhan Mantri Kisan Samman Nidhi (PM-Kisan)
+                      </h2>
+                      <p className="text-lg text-gray-600">
                         The Pradhan Mantri Kisan Samman Nidhi (PM-Kisan) Yojana
                         is a government initiative launched by the Government of
                         India to provide financial assistance to small and
@@ -116,42 +91,31 @@ const Dashboard = () => {
                       </p>
                     </div>
                   </div>
-                </div>{" "}
+                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className="image">
-                      <Link legacyBehavior href={"/home"}>
-                        <a>
-                          <Image
-                            src={"/images/yojana-3.jpg"}
-                            width={400}
-                            height={200}
-                            alt="yojana 1"
-                          />
-                        </a>
-                      </Link>
+                  <div className="grid items-center md:grid-cols-2 gap-5">
+                    <div className=" flex justify-center items-center">
+                      <Image
+                        src={"/images/yojana-3.jpg"}
+                        width={300}
+                        height={400}
+                        alt="yojana 3"
+                        className="rounded-md"
+                      />
                     </div>
-                    <div className="yojana-desc">
-                      <Link
-                        href={"/about"}
-                        className="text-orange-600 hover:text-orange-800"
-                      >
+                    <div>
+                      <div className="text-orange-600 hover:text-orange-800">
                         Yojana1
-                      </Link>
-                      <Link
-                        href={"/home"}
-                        className="text-gray-600 hover:text-gray-800"
-                      >
-                        launched on 3rd feb
-                      </Link>
-                      <div className="title">
-                        <h2 className="text-3xl md:text-6xl text-black font-bold hover:text-gray-500">
-                          Soil Health Card Scheme:
-                        </h2>
                       </div>
-                      <p className="text-lg text-gray-600 md:text-xl">
+                      <div className="text-gray-600 hover:text-gray-800">
+                        launched on 3rd feb
+                      </div>
+                      <h2 className="text-xl sm:text-3xl text-blue font-bold hover:text-gray-500">
+                        Soil Health Card Scheme:
+                      </h2>
+                      <p className="text-lg text-gray-600">
                         The Pradhan Mantri Kisan Samman Nidhi (PM-Kisan) Yojana
                         is a government initiative launched by the Government of
                         India to provide financial assistance to small and
@@ -166,42 +130,29 @@ const Dashboard = () => {
                       </p>
                     </div>
                   </div>
-                </div>{" "}
+                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className="image">
-                      <Link legacyBehavior href={"/home"}>
-                        <a>
-                          <Image
-                            src={"/images/yojana-2.jpg"}
-                            width={600}
-                            height={400}
-                            alt="yojana 1"
-                          />
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="yojana-desc">
-                      <Link
-                        href={"/about"}
-                        className="text-orange-600 hover:text-orange-800"
-                      >
+                  <div className="grid items-center md:grid-cols-2 gap-5">
+                    <Image
+                      src={"/images/yojana-2.jpg"}
+                      width={600}
+                      height={400}
+                      alt="yojana 1"
+                      className="rounded-md"
+                    />
+                    <div>
+                      <div className="text-orange-600 hover:text-orange-800">
                         Yojana1
-                      </Link>
-                      <Link
-                        href={"/home"}
-                        className="text-gray-600 hover:text-gray-800"
-                      >
-                        launched on 3rd feb
-                      </Link>
-                      <div className="title">
-                        <h2 className="text-3xl md:text-6xl text-black font-bold hover:text-gray-500">
-                          Heading
-                        </h2>
                       </div>
-                      <p className="text-lg text-gray-600 md:text-xl">
+                      <div className="text-gray-600 hover:text-gray-800">
+                        launched on 3rd feb
+                      </div>
+                      <h2 className="text-xl sm:text-3xl text-blue font-bold hover:text-gray-500">
+                        Pradhan Mantri Kisan Samman Nidhi (PM-Kisan)
+                      </h2>
+                      <p className="text-lg text-gray-600">
                         The Pradhan Mantri Kisan Samman Nidhi (PM-Kisan) Yojana
                         is a government initiative launched by the Government of
                         India to provide financial assistance to small and
@@ -212,9 +163,9 @@ const Dashboard = () => {
                       </p>
                     </div>
                   </div>
-                </div>{" "}
+                </div>
               </SwiperSlide>
-            </Swiper>{" "}
+            </Swiper>
             <Swiper
               spaceBetween={50}
               slidesPerView={1}
@@ -223,13 +174,14 @@ const Dashboard = () => {
               scrollbar={{ draggable: true }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
+              className="w-[1000px]"
             >
               <SwiperSlide>
                 <div className="container mx-auto py-16">
                   <h2 className="text-3xl font-bold text-center mb-10">
                     Sustainable Practices
                   </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-brown-200 p-4 rounded-md shadow-md hover:shadow-lg">
                       <h3 className="text-lg font-bold mb-2">Cover Cropping</h3>
                       <p className="text-gray-600">
@@ -272,7 +224,7 @@ const Dashboard = () => {
                         Read More
                       </button>
                     </div>{" "}
-                    <div className="bg-brown-200 p-4 rounded-md shadow-md hover:shadow-lg">
+                    {/* <div className="bg-brown-200 p-4 rounded-md shadow-md hover:shadow-lg">
                       <h3 className="text-lg font-bold mb-2">
                         Conservation Tillage:
                       </h3>
@@ -285,7 +237,7 @@ const Dashboard = () => {
                       <button className="bg-yellow-700 text-white px-4 py-2 mt-2 rounded-full hover:bg-yellow-800">
                         Read More
                       </button>
-                    </div>{" "}
+                    </div> */}
                   </div>
                 </div>
               </SwiperSlide>

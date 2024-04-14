@@ -64,7 +64,7 @@ export function AddProduct({ user_id }: { user_id: string }) {
   }
 
   return (
-    <Card className="w-[350px]">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Create a Product</CardTitle>
         <CardDescription>Add anything.</CardDescription>

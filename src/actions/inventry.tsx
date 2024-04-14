@@ -7,15 +7,17 @@ import { eq } from "drizzle-orm";
 export async function add_product_in_inventry(data: {
   user_id: string;
   name: string;
-  amount: number;
+  quantity: number;
   cost: number;
+  status: string;
 }) {
   try {
     const product = await db.insert(inventory).values(data).returning({
       name: inventory.name,
-      amount: inventory.amount,
+      quantity: inventory.quantity,
       cost: inventory.cost,
       id: inventory.id,
+      status: inventory.status,
     });
 
     return product;

@@ -1,5 +1,13 @@
 import { sql } from "drizzle-orm";
-import { pgTable, timestamp, uuid, text, integer, boolean, date } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  timestamp,
+  uuid,
+  text,
+  integer,
+  boolean,
+  date,
+} from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
   id: uuid("id").primaryKey().defaultRandom(),
@@ -20,9 +28,10 @@ export const inventory = pgTable("inventory", {
     .references(() => users.id)
     .notNull(),
   name: text("name").notNull(),
-  amount: integer("amount").notNull(),
+  quantity: integer("quantity").notNull(),
   cost: integer("cost").notNull(),
-  in_stock: boolean('in_stock').notNull().default(true),
+  status: text("status").notNull(),
+  in_stock: boolean("in_stock").notNull().default(true),
 });
 
 export type Inventory = typeof inventory.$inferSelect;
@@ -45,12 +54,12 @@ export const orders = pgTable("orders", {
 
 export type Order = typeof orders.$inferSelect;
 
-export const complains = pgTable('complains', {
+export const complains = pgTable("complains", {
   id: uuid("id").primaryKey().defaultRandom(),
-  name: text('name').notNull(),
-  issue: text('issue').notNull(),
-  location: text('location').notNull(),
-  date: date('date', { mode: 'date' }).notNull(),
+  name: text("name").notNull(),
+  issue: text("issue").notNull(),
+  location: text("location").notNull(),
+  date: date("date", { mode: "date" }).notNull(),
 });
 
 export type Complain = typeof complains.$inferSelect;
