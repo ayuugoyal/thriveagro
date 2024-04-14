@@ -1,12 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-Title: THRIVE AGRO is a web app centered to improve farmers' conditions through our dynamic features like 
-Inventory management: Farmers can manage their inventory by adding product quantity, expiration date, and product price which would give them an idea of how much stock is present.Farmers can track seeds , fertilizers and monitoring equipment .
+# THRIVE AGRO
 
-Buyer contacts-We connect farmers with mill owners who directly purchase from farmers avoiding any need for middlemen which decreases transportation costs and commission taken by middlemen.
+## Project Description
 
-Reporting section- Farmers can report to govt about any infrastructure problem they are facing like poor roads, bad irrigation facilities, dam construction, etc so that on an open platform their issues are resolved. 
-MADE IT FOR BYTEVERSE HACKATHON organised by NITP. 
-TECH STACKS USED
-FRONTEND: NEXTJS, REACT, TAILWIND CSS
-BACKEND: POSTGRESQL
-Library: Shadcn 
+THRIVE AGRO is a web app designed to improve farmer's conditions through dynamic features such as:
+
+- **Inventory Management:** Farmers can track and manage their inventory by adding product quantity, expiration date, and product price. This helps them keep track of their stock levels for seeds, fertilizers, and monitoring equipment.
+- **Buyer Contacts:** We connect farmers with mill owners who can directly purchase from them, eliminating the need for middlemen. This reduces transportation costs and the commission taken by intermediaries.
+- **Reporting Section:** Farmers can report infrastructure problems such as poor roads, bad irrigation facilities, dam construction, etc., to the government. This open platform allows their issues to be addressed and resolved.
+
+This project was created for the BYTEVERSE HACKATHON organized by NITP.
+
+## Tech Stacks Used
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Vercel
+- postgresSQL
+- Shadcn
+
+## Setup Locally
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/ayuugoyal/thriveagro.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd thriveagro
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+4. Set up environment variables:
+
+   - Create a `.env.local` or `.env` file in the root directory.
+   - Add environment variables such as database credentials, API keys, etc., to this file.
+
+5. Start the development server:
+
+   ```bash
+   pnpm run dev
+   ```
+
+6. Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the app.
+
+7. Deployement Link:
+   ```bash
+   https://thriveagro-eta.vercel.app/
+   ```
+
+## Contributing
+
+We welcome contributions to improve THRIVE AGRO. Feel free to submit pull requests or open issues.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
