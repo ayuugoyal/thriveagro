@@ -142,3 +142,14 @@ export async function getUser() {
     throw e;
   }
 }
+
+export async function log_out() {
+  try {
+    const cookieStore = cookies();
+    cookieStore.delete("token");
+    return true;
+  } catch (e) {
+    console.log(e);
+    return false;
+  }
+}
