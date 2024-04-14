@@ -8,7 +8,6 @@ import { Inventory } from "@/db/schema";
 
 const Page = () => {
   const [userProducts, setUserProducts] = useState([]);
-  const [user_id, setUser_id] = useState("");
 
   useEffect(() => {
     const fetchProducts = async () => {
